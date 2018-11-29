@@ -1,0 +1,24 @@
+= How to create a new tutorial for the Couchbase Tutorials Site
+
+. Clone the tutorial template.
++
+[source,bash]
+----
+git clone https://github.com/couchbaselabs/tutorial-template 
+----
+
+. Edit the tutorial template by following the instructions in the tutorials page. 
+
+. Build and verify your tutorial locally. Update the Antora playbook (such as staging-antora-playbook.yml) file in the docs-site repo to include the new tutorial repo. See xref:contribute/test-site.adoc[Build the site locally and test your changes] for information on how to test your changes locally.
++
+[source,yml]
+----
+  # Tutorial repositories
+  - url: https://github.com/couchbaselabs/tutorial-template.git
+    branches: master
+----
+
+. Push to GitHub under couchbase or couchbaselabs organizations.
+
+. Update the staging and production playbooks in the docs-site repository to include the new tutorial. Then submit a Pull Request to the docs-site repository with these changes.
+
