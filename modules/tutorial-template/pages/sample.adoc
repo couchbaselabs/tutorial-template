@@ -1,0 +1,38 @@
+= Sample Tutorial Template Overview
+
+== Tutorial Layout
+
+* All tutorials are grouped under the tutorials component and are displayed on the tutorials landing page with the metadata highlighted. The metadata combined with the site search is geared to provide quick access to tutorials that may be of interest to the user. The tutorials component is a version-agnostic and each tutorial will list the components and versions used to build the tutorial.
+  
+== Metadata Parameters
+
+The antora.yml file contains the metadata for that tutorial. The following table lists the metadata parameters used in a tutorial.
+
+|===
+| Parameter | Description
+
+| name
+| Must be 'tutorials'. The new tutorial will identify itself as part of the tutorials component. 
+
+| title
+| Specify the title of the tutorial to be displayed in the navigation.
+
+| version
+| Specify the version of the  
+
+| component1-name
+| Specify the name of the component used in the tutorial from one of: server, sync-gateway, couchbase-lite, k8s-operator, java-sdk, dotnet-sdk, etc
+
+| component1-version
+| Specify the version of component 1 used in the tutorial.
+
+| language
+| Specify the language used in the tutorial.
+
+|role
+| Specify the role that the tutorial is appliable for: architect, developer, devops, mobile-dev
+
+|===
+ 
+== Before You Begin
+
