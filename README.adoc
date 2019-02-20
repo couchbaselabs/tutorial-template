@@ -2,7 +2,7 @@
 
 This template tutorial can be used as the starting point to build your own tutorial for the Couchbase Tutorials site.
 
-== Create new tutorial from template
+== Create a new tutorial from the template
 
 . Clone the tutorial template.
 +
