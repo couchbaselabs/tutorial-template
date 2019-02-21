@@ -107,6 +107,7 @@ Target level for the tutorial: Beginner | Intermediate | Advanced
 
 . Submit a Pull Request to the https://github.com/couchbase/docs-site[docs-site] repository with your changes.
 
-That's it! Your Pull Request will be reviewed and we'll reach out to you if further changes are needed. Once approved, the tutorial will be published to site.
+That's it! Your Pull Request will be reviewed and we'll reach out to you if further changes are needed.
+Once the PR gets merged, the documentation site will be re-deployed with your tutorial.
 
 For any questions or additional help, please reach out to docs@couchbase.com.
