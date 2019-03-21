@@ -33,7 +33,7 @@ See xref:contribute/test-site.adoc[Build the site locally and test your changes]
 
 . Push the new tutorial repository to GitHub under couchbase or couchbaselabs organizations.
 
-== Update the Couchbase Tutorials repository
+== Update the Tutorials Left Navigation
 
 . Add your new tutorial to the tutorials site nav.
 +
@@ -43,12 +43,18 @@ Update the https://github.com/couchbaselabs/tutorials/blob/master/modules/ROOT/n
 .Nav title for new tutorial
 include::new-tutorial-component:partial$nav.adoc[]
 ----
+. To submit a change to *nav.adoc*, you can open a pull request on the https://github.com/couchbaselabs/tutorials[tutorials] repository.
 
-. Add metadata for the Couchbase Tutorials site
+== Add a Tutorial Card
 
-The https://docs.couchbase.com/tutorials[Tutorials] home page lists all the tutorials available on the new site.
+The xref:tutorials::index.adoc[tutorials index page] provides a central location to find tutorials.
+The following steps describe how to create a card for your tutorial.
 
-The metadata for each tutorial is captured in the https://github.com/couchbaselabs/tutorials/blob/master/modules/ROOT/pages/index.adoc[index.adoc] file.
+. Update the https://github.com/couchbaselabs/tutorials/blob/master/modules/ROOT/pages/index.adoc[index.adoc] file to include your new tutorial.
++
+The tutorial information (title, description, components, etc.) must be valid AsciiDoc and follow a pre-defined layout.
+The following code block describes the AsciiDoc layout.
+To add or update an existing card, you can submit changes to the *index.adoc* as a pull request on the https://github.com/couchbaselabs/tutorials[tutorials] repository.
 +
 ----
 [.developer]
@@ -98,17 +104,15 @@ Target level for the tutorial: Beginner | Intermediate | Advanced
 ////
 ----
 
-. Submit a Pull Request to the https://github.com/couchbaselabs/tutorials[tutorials] repository with your changes.
-
-== Update the Couchbase docs-site repository
+== Publish Your Tutorial
 
 . Update the Antora staging and production playbooks in the https://github.com/couchbase/docs-site[docs-site] repository to include the new tutorial.
 +
 [souce,yml]
 ----
 # Tutorial repositories
-  - url: https://github.com/couchbaselabs/new-tutorial.git
-    branches: master
+- url: https://github.com/couchbaselabs/new-tutorial.git
+  branches: master
 ----
 
 . Submit a Pull Request to the https://github.com/couchbase/docs-site[docs-site] repository with your changes.
@@ -118,33 +122,16 @@ Once the PR gets merged, the documentation site will be re-deployed with your tu
 
 For any questions or additional help, please reach out to docs@couchbase.com.
 
-== Metadata Parameters
+== Antora File
 
-The antora.yml file contains the metadata for that tutorial. The following table lists the metadata parameters used in a tutorial.
+The *antora.yml* file contains the metadata for the build system (Antora).
+It must contain the following.
 
-|===
-| Parameter | Description
-
-| name
-| Must be 'tutorials'. The new tutorial will identify itself as part of the tutorials component.
-
-| title
-| Specify the title of the tutorial to be displayed in the navigation.
-
-| version
-| Specify the version of the
-
-| component1-name
-| Specify the name of the component used in the tutorial from one of: server, sync-gateway, couchbase-lite, k8s-operator, java-sdk, dotnet-sdk, etc
-
-| component1-version
-| Specify the version of component 1 used in the tutorial.
-
-| language
-| Specify the language used in the tutorial.
-
-|role
-| Specify the role that the tutorial is appliable for: architect, developer, devops, mobile-dev
-
-|===
-
+[source,yaml]
+----
+name: tutorials // <1>
+version: 'master' // <2>
+----
+<1> Must be `tutorials`. The new tutorial will identify itself as part of the tutorials component.
+<2> Must be `'master'`. Specifies the version.
+ The following table lists the metadata parameters used in a tutorial.
