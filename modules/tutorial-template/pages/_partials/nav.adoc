@@ -1,1 +1,1 @@
-** xref:tutorial-template:sample.adoc[Tutorial Template]
+** xref:tutorial-template:sample.adoc[Basic Tutorial Template]
