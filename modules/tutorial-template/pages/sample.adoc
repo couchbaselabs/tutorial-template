@@ -58,51 +58,40 @@ To add or update an existing card, you can submit changes to the *index.adoc* as
 +
 ----
 [.developer]
-== <Role: Developer | Architect | Mobile Developer | DevOps>
+== Developer <1>
+
 [.title]
-xref:tutorials:mobile-travel-sample:introduction.adoc[Title of your tutorial, recommend < 50 characters ]
-
-////
-If your tutorial is language agnostic, link the title to the tutorial page. However, if your tutorial contains language (or platform) specific pages, then link the title to the top-level tutorial page that describes the overall tutorial.
-////
-
-=== {empty}
-[.summary]
-Abstract for the new tutorial, recommend < 256 characters.
-[.links]
-xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Language-specific child page for the tutorial]
-xref:tutorials:mobile-travel-sample:java/design/data-modeling.adoc[Java]
-
-////
-Links are required only if your tutorial contains language (or platform) specific pages.
-////
+=== xref:tutorials:session-storage:install.adoc[Using Couchbase Server as a Session Store] <2>
 
 ==== {empty}
+[.summary]
+An in-depth tutorial that demonstrates how to use Couchbase Server for session storage.
+You will learn how to read, write session data and query session data with N1QL for business insights. <3>
+[.links]
+xref:tutorials:session-storage:aspnet.adoc[ASP.NET Core] <4>
+xref:tutorials:session-storage:java.adoc[Java]
 
-===== Components
-* Server 5.5
-* Lite 2.1
-* Sync Gateway 2.1
+===== {empty}
 
-////
-List the products and their respective versions used to build your tutorial.
-////
+====== Components <5>
+* Server 6.0
 
-===== Languages
-* Swift
-* Java
+====== Languages <6>
 * C#
-
-////
-List the languages applicable to your tutorial.
-////
+* Java
 
 [.metadata]
-==== Intermediate
-////
-Target level for the tutorial: Beginner | Intermediate | Advanced
-////
+=== Intermediate <7>
 ----
+<1> The role that this tutorial is primarily written for: `Developer` | `Architect` | `Mobile Developer` | `DevOps`
+<2> Title to your tutorial, it is recommended for the title length to be under 50 characters.
+If your tutorial is language agnostic, link the title to the tutorial page.
+However, if your tutorial contains language (or platform) specific pages, then link the title to the top-level tutorial page that describes the overall tutorial.
+<3> Abstract for the new tutorial, it is recommended for the abstract length to be under 256 characters.
+<4> Optional sub-page links (if your tutorial contains language or platform specific pages for example).
+<5> List the products and their respective versions used to build your tutorial.
+<6> List the languages applicable to your tutorial.
+<7> Target level for the tutorial: `Beginner` | `Intermediate` | `Advanced`
 
 == Publish Your Tutorial
 
