@@ -91,7 +91,7 @@ The xref:home:contribute:update-nav.adoc[contribution guide] contains examples o
 . To submit a change to the root *nav.adoc*, you can open a pull request on the https://github.com/couchbaselabs/tutorials[tutorials] repository.
 
 NOTE: The steps described above apply to all tutorials except `userprofile-couchbase-mobile` for iOS/Xamarin/Android.
-The navigation for those tutorials is located in the `userprofile-couchbase-mobile` repository on the https://github.com/couchbaselabs/userprofile-couchbase-mobile/blob/standalone/content/modules/userprofile/nav.adoc[standalone], https://github.com/couchbaselabs/userprofile-couchbase-mobile/blob/query/content/modules/userprofile/nav.adoc[query], and https://github.com/couchbaselabs/userprofile-couchbase-mobile/blob/sync/content/modules/userprofile/nav.adoc[query] branches.
+The navigation for those tutorials is located in the `userprofile-couchbase-mobile` repository on the https://github.com/couchbaselabs/userprofile-couchbase-mobile/blob/standalone/content/modules/userprofile/nav.adoc[standalone], https://github.com/couchbaselabs/userprofile-couchbase-mobile/blob/query/content/modules/userprofile/nav.adoc[query], and https://github.com/couchbaselabs/userprofile-couchbase-mobile/blob/sync/content/modules/userprofile/nav.adoc[sync] branches.
 
 == Add a Tutorial Card
 
