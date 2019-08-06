@@ -2,13 +2,48 @@
 
 == Introduction
 
-All tutorials are grouped under the tutorials component and are displayed on the tutorials landing page with the metadata highlighted.
+All tutorials are grouped under the tutorials component and are displayed on the tutorials https://docs.couchbase.com/tutorials/index.html[landing page] with the metadata highlighted.
 The metadata combined with the site search is geared to provide quick access to tutorials that may be of interest to the user.
 The tutorials component is a version-agnostic and each tutorial will list the components and versions used to build the tutorial.
 
+== Workspace
+
+This section describes how to set up your workspace.
+
+If you've never built the site on your device, complete the xref:home:contribute:install-antora.adoc[Install Antora] steps first.
+Once Antora is installed, run through the following steps.
+
+. In a new folder, create a new file **local-antora-playbook.yml** with the following.
++
+[source,yml]
+----
+site:
+  title: Couchbase Docs (Tutorials)
+content:
+  sources:
+  - url: ./tutorials
+    branches: HEAD
+----
+. From that same folder, clone the tutorials repository.
++
+[source,console]
+----
+git clone https://github.com/couchbase/tutorials.git
+----
+. Build the local preview.
++
+[source,console]
+----
+gulp
+----
+You can now open http://localhost:5000/tutorials/index.html in a web browser which should load the tutorials index page.
+If you notice that the links on the page are broken, don't worry, it's happening because we haven't cloned any tutorial content.
++
+The https://github.com/couchbase/docs-site#file-watcher-and-livereload[docs-site readme] has more information about using gulp with Antora.
+
 == Create a new tutorial from the template
 
-This following steps can be used as the starting point to build your own tutorial for the Couchbase Tutorials site.
+The following steps can be used as the starting point to build your own tutorial.
 
 . Clone the tutorial template.
 +
@@ -16,34 +51,45 @@ This following steps can be used as the starting point to build your own tutoria
 ----
 git clone https://github.com/couchbaselabs/tutorial-template
 ----
-
-. Edit the tutorial template and <<metadata-parameters, Metadata Parameters>> with details of your tutorial.
-
-. Build and verify your tutorial locally.
-.. Update the local Antora playbook (such as staging-antora-playbook.yml) file in the docs-site repo to include the new tutorial repo.
+. Insert this new source in your **local-antora-playbook.yml** file.
 +
 [source,yml]
 ----
-  # Tutorial repositories
+  - url: ./tutorial-template
+    branches: HEAD
+----
+. Build and verify your tutorial locally.
+It should be visible on http://localhost:5000/tutorials/tutorial-template/sample.html
+. Edit the tutorial template and <<metadata-parameters, Metadata Parameters>> with details of your tutorial.
+. To submit a change to the site playbooks, you can open a pull request on the https://github.com/couchbaselabs/tutorials[tutorials] repository to insert your tutorial in *staging-antora-playbook.yml* and *production-antora-playbook.yml*.
++
+[source,yml]
+----
   - url: https://github.com/couchbaselabs/tutorial-template.git
     branches: master
 ----
+
+== Update the Left Navigation
+
+The navigation tree for a tutorial is kept in the module with the rest of the content.
+The following steps describe how to add a new menu item in the left navigation.
+
+. Create a new file **module-name/pages/_partials/nav.adoc** to declare the navigation tree for your tutorial.
+Insert the following.
 +
-See xref:contribute/test-site.adoc[Build the site locally and test your changes] for information on how to test your changes locally.
-
-. Push the new tutorial repository to GitHub under couchbase or couchbaselabs organizations.
-
-== Update the Tutorials Left Navigation
-
-. Add your new tutorial to the tutorials site nav.
-+
-Update the https://github.com/couchbaselabs/tutorials/blob/master/modules/ROOT/nav.adoc[nav.adoc] file to include your new tutorial.
+----
+* Hello World
+----
+. Next, update the root nav in **tutorials/modules/ROOT/nav.adoc** file to include your tutorial nav.
 +
 ----
 .Nav title for new tutorial
-include::new-tutorial-component:partial$nav.adoc[]
+\include::module-name:partial$nav.adoc[]
 ----
-. To submit a change to *nav.adoc*, you can open a pull request on the https://github.com/couchbaselabs/tutorials[tutorials] repository.
+. Edit **module-name/pages/_partials/nav.adoc** until you are happy with the output.
+The xref:home:contribute:update-nav.adoc[contribution guide] contains examples of navigation trees.
+
+To submit a change to the root *nav.adoc*, you can open a pull request on the https://github.com/couchbaselabs/tutorials[tutorials] repository.
 
 == Add a Tutorial Card
 
