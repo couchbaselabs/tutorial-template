@@ -10,9 +10,16 @@ The tutorials component is a version-agnostic and each tutorial will list the co
 
 This section describes how to set up your workspace.
 
-If you've never built the site on your device, complete the xref:home:contribute:install-antora.adoc[Install Antora] steps first. You must also go to https://gulpjs.com/ and follow the installation instructions (currently on the front page) in order to install gulp.
+NOTE: If you've never built the site on your device, complete the xref:home:contribute:install-antora.adoc[Install Antora] steps first. 
 
-Once Antora and gulp are installed, run through the following step:.
+You can use Gulp CLI to preview your site. If you do not have Gulp CLI installed, use the following command to install gulp CLI globally:
+
+[source,bash]
+----
+npm install -g gulp-cli
+----
+
+Once Antora and Gulp are installed, run through the following steps:
 
 . In a new folder, create a new file **local-antora-playbook.yml** with the following.
 +
