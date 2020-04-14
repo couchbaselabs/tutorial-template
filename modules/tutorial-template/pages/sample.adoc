@@ -10,7 +10,7 @@ The tutorials component is a version-agnostic and each tutorial will list the co
 
 This section describes how to set up your workspace.
 
-NOTE: If you've never built the site on your device, complete the xref:home:contribute:install-antora.adoc[Install Antora] steps first. 
+If you've never built the site on your device, complete the xref:home:contribute:install-antora.adoc[Install Antora] steps first. 
 
 You can use Gulp CLI to preview your site. If you do not have Gulp CLI installed, use the following command to install gulp CLI globally:
 
