@@ -153,7 +153,7 @@ However, if your tutorial contains language (or platform) specific pages, then l
 
 . Update the Antora staging and production playbooks in the https://github.com/couchbase/docs-site[docs-site] repository to include the new tutorial.
 +
-[souce,yml]
+[source,yml]
 ----
 # Tutorial repositories
 - url: https://github.com/couchbaselabs/new-tutorial.git
