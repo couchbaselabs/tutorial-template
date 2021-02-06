@@ -179,4 +179,4 @@ version: 'master' // <2>
 ----
 <1> Must be `tutorials`. The new tutorial will identify itself as part of the tutorials component.
 <2> Must be `'master'`. Specifies the version.
- The following table lists the metadata parameters used in a tutorial.
+ 
